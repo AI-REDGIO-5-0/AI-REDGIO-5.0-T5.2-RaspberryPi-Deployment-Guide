@@ -18,6 +18,7 @@ services:
       - "5000:5000"
     volumes:
       - ./logs:/app/logs
+      - ./models:/app/models
     networks:
       - edge-net
 
