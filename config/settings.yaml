@@ -1,0 +1,25 @@
+model:
+  path: models/model.tflite
+  input_shape: [1, 224, 224, 3]
+  threshold: 0.5
+
+sensors:
+  camera_enabled: true
+  camera_index: 0
+  read_interval: 5  # seconds
+  temperature_enabled: true
+  temperature_simulated: true  # false if real hardware is used
+
+communication:
+  mqtt:
+    enabled: true
+    broker: broker.hivemq.com
+    port: 1883
+    topic: rpi/ai/results/juande
+  rest:
+    enabled: true
+    endpoint: http://rest_api:5000/api/results
+
+logging:
+  level: INFO
+  path: logs/runtime.log

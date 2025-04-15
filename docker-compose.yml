@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: mqtt
+    ports:
+      - "1883:1883"
+    networks:
+      - edge-net
+
+  rest_api:
+    build:
+      context: .
+      dockerfile: tools/rest_api/Dockerfile.rest
+    container_name: rest_api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - edge-net
+
+  edge_node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    devices:
+      - /dev/video0:/dev/video0
+    privileged: true
+    container_name: edge_node
+    depends_on:
+      - mqtt
+      - rest_api
+    volumes:
+      - ./logs:/app/logs
+      - ./models:/app/models
+      - ./config:/app/config
+    networks:
+      - edge-net
+    restart: always
+
+networks:
+  edge-net:
+    driver: bridge
