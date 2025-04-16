@@ -10,12 +10,9 @@ env/
 src/env/
 
 # Log files
-*.log
-logs/
-logs/**/*
+logs/*
 !logs/.gitkeep
-logs/rest_data/
-logs/rest_data/**/*
+logs/rest_data/*
 !logs/rest_data/.gitkeep
 
 # Model files and artifacts
