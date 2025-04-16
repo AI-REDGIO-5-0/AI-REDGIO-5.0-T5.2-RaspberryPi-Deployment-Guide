@@ -113,8 +113,8 @@ graph TD
 ### 1. Clone the repository
 
 ```bash
-git clone https://your.repo.url/rpi_edge_ai.git
-cd rpi_edge_ai
+git clone https://github.com/AI-REDGIO-5-0/AI-REDGIO-5.0-T5.2-RaspberryPi-Deployment-Guide.git
+cd AI-REDGIO-5.0-T5.2-RaspberryPi-Deployment-Guide
 ```
 
 ### 2. Build and launch the full system (Docker recommended)
@@ -324,8 +324,8 @@ sudo raspi-config
 3. **Clone and enter project**
 
 ```bash
-git clone https://your.repo.url/rpi_edge_ai.git
-cd rpi_edge_ai
+git clone https://github.com/AI-REDGIO-5-0/AI-REDGIO-5.0-T5.2-RaspberryPi-Deployment-Guide.git
+cd AI-REDGIO-5.0-T5.2-RaspberryPi-Deployment-Guide
 ```
 
 4. **Create virtual environment (recommended)**
